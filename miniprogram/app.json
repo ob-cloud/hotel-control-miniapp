@@ -10,9 +10,9 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#0b1730",
     "navigationBarTitleText": "酒店客控助手",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },
   "tabBar": {
@@ -42,7 +42,8 @@
     ]
   },
   "usingComponents": {
-    "loading": "/components/loading/loading"
+    "loading": "/components/loading/loading",
+    "van-tab": "@vant/weapp/tab/index"
   },
   "networkTimeout": {
     "request": 10000,

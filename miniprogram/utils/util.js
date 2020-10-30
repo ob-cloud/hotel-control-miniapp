@@ -1,5 +1,5 @@
 // const api = require('../config/api')
-
+import $ from './tool'
 function dateFormat(fmt = 'YYYY-mm-dd HH:MM:SS', date = new Date()) {
   let ret
   const opt = {
@@ -27,7 +27,7 @@ function request(url, data = {}, method = "GET") {
       method: method,
       header: {
         'Content-Type': 'application/json',
-        'X-Nideshop-Token': wx.getStorageSync('token')
+        'X-Nideshop-Token': $.storage.get('token')
       },
       success: function (res) {
         console.log("success");
@@ -75,12 +75,19 @@ function request(url, data = {}, method = "GET") {
   });
 }
 
-function get(url, data = {}) {
+function getAction(url, data = {}) {
   return request(url, data, 'GET')
 }
 
-function post(url, data = {}) {
+function postAction(url, data = {}) {
   return request(url, data, 'POST')
+}
+function putAction(url, data = {}) {
+  return request(url, data, 'PUT')
+}
+
+function deleteAction(url, data = {}) {
+  return request(url, data, 'DELETE')
 }
 
 function login() {
@@ -116,16 +123,56 @@ function checkSession() {
   });
 }
 
+function checkLogin() {
+  return new Promise(function(resolve, reject) {
+    if ($.storage.get('token')) {
+      checkSession().then(() => {
+        resolve(true);
+      }).catch(() => {
+        reject(false);
+      });
+    } else {
+      reject(false);
+    }
+  });
+}
+
 function getUserInfo() {
   return new Promise(function (resolve, reject) {
     wx.getUserInfo({
       withCredentials: true,
       success: function (res) {
-        if (res.detail.errMsg === 'getUserInfo:ok') {
+        if (res.errMsg === 'getUserInfo:ok') {
           resolve(res);
         } else {
           reject(res)
         }
+      },
+      fail: function (err) {
+        reject(err);
+      }
+    })
+  });
+}
+
+function updateManager() {
+  const updateManager = wx.getUpdateManager()
+  wx.getUpdateManager().onUpdateReady(function() {
+    wx.showModal({
+      title: '更新提示',
+      content: '新版本已经准备好，是否重启应用',
+      success: function(res) {
+        if (res.confirm) updateManager.applyUpdate()
+      }
+    })
+  })
+}
+
+function getSystemInfo() {
+  return new Promise(function (resolve, reject) {
+    wx.getSystemInfo({
+      success: function (res) {
+        resolve(res);
       },
       fail: function (err) {
         reject(err);
@@ -158,11 +205,16 @@ function showErrorToast(msg) {
 module.exports = {
   dateFormat,
   request,
-  get,
-  post,
+  getAction,
+  postAction,
+  putAction,
+  deleteAction,
   redirect,
   showErrorToast,
   checkSession,
+  checkLogin,
   login,
   getUserInfo,
+  updateManager,
+  getSystemInfo
 }

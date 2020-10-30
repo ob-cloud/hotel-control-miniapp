@@ -1,30 +1,23 @@
 .form-box {
-  width: 80%;
+  box-sizing: border-box;
+  width: 100%;
   height: auto;
   overflow: hidden;
+  padding: 0 40rpx;
   margin-top: 96rpx;
   background: #fff;
-  margin: 96rpx auto;
 }
 
 .form-item {
   position: relative;
-  background: #fff;
-  padding: 10px;
+  height: 96rpx;
   border-bottom: 1px solid #e8e8e8;
 }
-.form-item .title{
-    float: left;
-    font-size: 32rpx;
-    padding-right: 20rpx;
-    color: #000;
-    padding-top: 3px;
-}
+
 .form-item .username,
 .form-item .password,
 .form-item .code {
   display: block;
-  background: #fff;
   color: #333;
   font-size: 30rpx;
 }
@@ -54,19 +47,21 @@
   right: 18rpx;
   z-index: 2;
   display: block;
-  background: #fff;
+  background: #f4f4f4;
   height: 44rpx;
   width: 44rpx;
 }
 
 .login-btn {
-  margin: 60rpx 0 40rpx 0;
   padding: 2px 12px;
-  color: #fff;
+  /* background: #1890ff; */
+  margin: 60rpx auto;
   font-size: 34rpx;
-  width: 100%;
-  background: #1890ff;
-  border-radius: 8rpx;
+  width: 90%;
+  color: #f4f4f4;
+  border-radius: 50rpx;
+  letter-spacing: 3rpx;
+  background-image: linear-gradient(to right, #9a9ba1 0%, #9a9ba1 100%);
 }
 
 .form-item-text {
@@ -79,7 +74,6 @@
   height: 34rpx;
   float: left;
   font-size: 28rpx;
-  color: #999;
 }
 
 .form-item-text .reset {
@@ -87,5 +81,4 @@
   height: 34rpx;
   float: right;
   font-size: 28rpx;
-  color: #999;
 }

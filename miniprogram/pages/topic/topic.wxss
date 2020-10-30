@@ -1,4 +1,40 @@
-page ,.container{
+.page-wrapper {
+    height: 100%;
+}
+.page-wrapper .header {
+    padding: 0 30rpx;
+    height: 190rpx;
+    position: relative;
+    background-color: #0b1730;
+  }
+  
+  .page-wrapper .header .text {
+    flex: 1;
+    margin-left: 35rpx;
+  }
+  
+  .page-wrapper .header .text .title {
+    color: #868d95;
+    font-size: 60rpx;
+    max-width: 470rpx;
+  }
+
+  .gateway-list .thumb{
+  }
+  .card-wrapper {
+    margin: 10rpx 0;
+  }
+  .card-wrapper .custom-class {
+    height: 190rpx;
+  }
+  .card-wrapper .title-class {
+      padding: 16rpx 0;
+  }
+  .card-wrapper .custom-thumb {
+    width: 140rpx!important;
+    height: 140rpx!important;
+  }
+/* page ,.container{
    width: 750rpx;
     height: 100%;
     overflow: hidden;
@@ -91,4 +127,4 @@ page ,.container{
 
 .page .disabled{
     color: #ccc;
-}
+} */

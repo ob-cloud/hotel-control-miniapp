@@ -1,9 +1,41 @@
-<view class="container">
+<view class='page-wrapper'>
+  <view class='header acea-row row-between-wrapper'>
+    <view class='avatar'>
+      <image src='{{userInfo.avatar}}'></image>
+    </view>
+    <view class='acea-row row-between-wrapper text'>
+      <view class='name' bindtap='onUserInfoClick'>{{userInfo.username || '点击登录'}}</view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='menu-list'>
+      <view class='menu-header acea-row row-between-wrapper'>
+        <view class=''>信息</view>
+        <!-- <view class='description' hover-class='none'>
+          全部订单
+        </view> -->
+      </view>
+      <view class='menu-content acea-row row-middle'>
+        <view class='item' hover-class='none' data-index='1'>
+          <view class=''>指南</view>
+        </view>
+        <view class='item' hover-class='none' data-index='1'>
+          <view class=''>版本</view>
+        </view>
+        <view class='item' hover-class='none' data-index='1'>
+          <view class=''>关于</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="logout" bindtap="logout">退出登录</view>
+</view>
+
+<!-- <view class="container">
   <view class="profile-info">
     <image bindtap="onUserInfoClick" class="avatar" src="{{userInfo.avatar}}"></image>
     <view class="info">
       <text class='name' bindtap='onUserInfoClick'>{{ userInfo.nickname || '点击登录' }}</text>
-      <!-- <text class='level' bindtap='onUserInfoClick'></text> -->
     </view>
     <image bindtap="onUserInfoClick" class='btn' src='/static/images/address_right.png'></image>
   </view>
@@ -77,4 +109,4 @@
     </view>
   </view>
   <view class="logout" bindtap="exitLogin">退出登录</view>
-</view>
+</view> -->

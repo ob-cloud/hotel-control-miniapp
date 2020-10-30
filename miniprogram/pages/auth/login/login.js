@@ -1,5 +1,5 @@
 var api = require('../../../config/api.js');
-import { post } from '../../../utils/util';
+import { postAction, getUserInfo } from '../../../utils/util';
 import $ from '../../../utils/tool';
 import router from '../../../utils/router';
 // var app = getApp();
@@ -42,19 +42,27 @@ Page({
       return false;
     }
     $.loading('登录中...')
-    post(api.AuthLogin, {
-      username: that.data.username,
-      password: md5(that.data.password)
-    }).then((res) => {
-      $.hideLoading()
-      if(res.code === 'OK'){
-        that.setData({
-          'loginErrorCount': 0
-        });
-        $.storage.set('token', res.result.token)
-        $.storage.set('userInfo', res.result.userInfo)
-        router.switchTab('home')
-      }
+    getUserInfo().then(res => {
+      const nickName = res.userInfo.nickName
+      const avatarUrl = res.userInfo.avatarUrl
+      return { nickName, avatarUrl }
+    }).then(({nickName, avatarUrl}) => {
+      postAction(api.AuthLogin, {
+        username: that.data.username,
+        password: md5(that.data.password)
+      }).then((res) => {
+        $.hideLoading()
+        if (res.code === 'OK') {
+          that.setData({
+            'loginErrorCount': 0
+          });
+          if (!res.result.userInfo.username) res.result.userInfo.username = nickName
+          if (!res.result.userInfo.avatar) res.result.userInfo.avatar = avatarUrl
+          $.storage.set('token', res.result.token)
+          $.storage.set('userInfo', res.result.userInfo)
+          router.switchTab('home')
+        }
+      })
     })
   },
   bindUsernameInput: function (e) {

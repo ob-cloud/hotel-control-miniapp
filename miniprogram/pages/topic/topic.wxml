@@ -1,16 +1,32 @@
-<view class="container">
-    <scroll-view class="topic-list" scroll-y="true" scroll-top="{{scrollTop}}">
-        <navigator class="item" wx:for="{{topicList}}" wx:key="{{item.id}}" url="../topicDetail/topicDetail?id={{item.id}}">
-            <image class="img" src="{{item.scene_pic_url}}"></image>
-            <view class="info">
-                <text class="title">{{item.title}}</text>
-                <text class="desc">{{item.subtitle}}</text>
-                <text class="price">{{item.price_info}}元起</text>
-            </view>
-        </navigator>
-        <view class="page" wx:if="{{showPage}}">
-            <view class="prev {{ page <= 1 ? 'disabled' : ''}}" bindtap="prevPage">上一页</view>
-            <view class="next {{ (count / size) < page +1 ? 'disabled' : ''}}" bindtap="nextPage">下一页</view>
+<view class="page-wrapper">
+    <view class='header acea-row row-between-wrapper' id="header">
+        <view class='acea-row row-between-wrapper text'>
+            <view class='title'>设备</view>
         </view>
-    </scroll-view>
+    </view>
+    <van-tabs bind:change="onChange">
+        <van-tab title="网关">
+            <scroll-view class="gateway-list"  style="height:{{scrollHeight}}px;" scroll-y="true" scroll-top="{{scrollTop}}">
+                <view class="card-wrapper" wx:key="oboxSerialId" wx:for="{{gatewayList}}">
+                    <van-card
+                        custom-class="custom-class"
+                        thumb-class="custom-thumb"
+                        title-class="title-class"
+                        thumb="{{ item.thumb }}" 
+                        desc="{{ item.oboxSerialId }}" 
+                        title="{{ item.oboxName }}">
+                    </van-card>
+                </view>
+            </scroll-view>
+        </van-tab>
+        <van-tab title="红外">
+            <scroll-view class="topic-list" scroll-y="true" scroll-top="{{scrollTop}}">
+                <van-card desc="{{item.oboxSerialId}}" title="{{item.oboxName}}" wx:key="oboxSerialId" wx:for="gatewayList">
+                    <view slot="thumb">
+                        <image src="../../static/images/gateway.png"></image>
+                    </view>
+                </van-card>
+            </scroll-view>
+        </van-tab>
+    </van-tabs>
 </view>

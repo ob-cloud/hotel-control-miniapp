@@ -1,10 +1,37 @@
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
+import { getSystemInfo } from '../../utils/util'
 var app = getApp()
 Page({
     data: {
         // text:"这是一个页面"
         topicList: [],
+        gatewayList: [{
+            oboxName: 'Obc3eac9eca',
+            oboxSerialId: '962a9b4da5f85566cd88',
+            thumb: '/static/images/gateway.png'
+        }, {
+            oboxName: 'Obc3eac9eca',
+            oboxSerialId: '962a9b4da5f85566cd88',
+            thumb: '/static/images/gateway.png'
+        }, {
+            oboxName: 'Obc3eac9eca',
+            oboxSerialId: '962a9b4da5f85566cd88',
+            thumb: '/static/images/gateway.png'
+        }, {
+            oboxName: 'Obc3eac9eca',
+            oboxSerialId: '962a9b4da5f85566cd88',
+            thumb: '/static/images/gateway.png'
+        }, {
+            oboxName: 'Obc3eac9eca',
+            oboxSerialId: '962a9b4da5f85566cd88',
+            thumb: '/static/images/gateway.png'
+        }, {
+            oboxName: 'Obc3eac9eca',
+            oboxSerialId: '962a9b4da5f85566cd88',
+            thumb: '/static/images/gateway.png'
+        }],
+        scrollHeight: 0,
         page: 1,
         size: 10,
         count: 0,
@@ -13,8 +40,13 @@ Page({
     },
     onLoad: function (options) {
         // 页面初始化 options为页面跳转所带来的参数
-        this.getTopic();
-
+        // this.getTopic();
+        const that = this
+        getSystemInfo().then(res => {
+            that.setData({
+                scrollHeight: res.windowHeight - 125
+            })
+        })
     },
     onReady: function () {
         // 页面渲染完成
@@ -27,6 +59,12 @@ Page({
     },
     onUnload: function () {
         // 页面关闭
+    },
+    onChange: function(e) {
+        wx.showToast({
+            title: `切换到标签 ${event.detail.name}`,
+            icon: 'none',
+        });
     },
     nextPage: function (event) {
       console.log();

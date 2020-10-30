@@ -1,4 +1,4 @@
-page{
+/* page{
     height: 100%;
     width: 100%;
     background: #f4f4f4;
@@ -194,4 +194,92 @@ page{
 
 .dialog-login .dialog-body button{
   margin-top: 30rpx;
+} */
+
+
+
+.page-wrapper .header {
+  padding: 0 30rpx;
+  height: 190rpx;
+  position: relative;
+  background-color: #0b1730;
+}
+
+.page-wrapper .header .avatar {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.page-wrapper .header .avatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #f5f5f5;
+}
+
+.page-wrapper .header .text {
+  flex: 1;
+  margin-left: 35rpx;
+}
+
+.page-wrapper .header .text .name {
+  color: #fff;
+  font-size: 36rpx;
+  max-width: 470rpx;
+}
+
+.page-wrapper .content {
+  padding: 0 20rpx;
+}
+
+.page-wrapper .content .menu-list {
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+}
+
+.page-wrapper .content .menu-list .menu-header {
+  height: 88rpx;
+  padding: 0 30rpx;
+  border-bottom: 1px dashed #ddd;
+  font-size: 30rpx;
+  color: #282828;
+}
+
+.page-wrapper .content .menu-list .menu-header .description {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.page-wrapper .content .menu-list .menu-content {
+  height: 160rpx;
+}
+
+.page-wrapper .content .menu-list .menu-content .item {
+  width: 25%;
+  font-size: 26rpx;
+  color: #454545;
+  flex: 1;
+  text-align: center;
+}
+
+.page-wrapper .content .menu-list .menu-content .item .pictrue {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 auto 18rpx auto;
+}
+
+.page-wrapper .content .menu-list .menu-content .item .pictrue image {
+  width: 100%;
+  height: 100%;
+}
+.logout{
+  margin-top: 50rpx;
+  height: 101rpx;
+  width: 100%;
+  line-height: 101rpx;
+  text-align: center;
+  background: #fff;
+  color: #333;
+  font-size: 30rpx;
 }

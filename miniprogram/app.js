@@ -1,10 +1,11 @@
+import router from './utils/router'
+import { checkLogin, updateManager } from './utils/util'
 //app.js
 App({
   onLaunch: function () {
-    
-    const token = wx.getStorageSync('token')
-    if (!token) wx.redirectTo({
-      url: '/pages/auth/login/login',
-    })
+    updateManager()
+  },
+  onShow: function() {
+    checkLogin().catch(() => router.redirectTo('login'))
   }
 })
