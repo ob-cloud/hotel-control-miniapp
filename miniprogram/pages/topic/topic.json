@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "van-tabs": "@vant/weapp/tabs/index",
-    "van-card": "@vant/weapp/card/index"
+    "wux-tabs": "wux-weapp/tabs/index",
+    "wux-tab": "wux-weapp/tab/index",
+    "wux-card": "wux-weapp/card/index"
   }
 }

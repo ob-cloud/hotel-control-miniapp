@@ -13,8 +13,8 @@
         </view>
       </view> -->
       <view class="menu-list">
-        <view class="item" wx:for="{{menuList}}" wx:key="path" bindtap='goPages' data-name='{{item.path}}' wx:if="{{item.path}}">
-          <view class="icon"><image src='../../static/images/{{item.icon}}'></image></view>
+        <view class="item" wx:for="{{menuList}}" wx:key="id" bindtap='goPages' data-name='{{item.path}}' data-type="{{item.type}}" wx:if="{{item.path}}">
+          <view class="icon"><image src='../../../static/images/{{item.icon}}'></image></view>
           <text class="txt">{{item.name}}</text>
         </view>
       </view>

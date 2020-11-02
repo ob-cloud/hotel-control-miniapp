@@ -1,5 +1,7 @@
 const pages = {
-  home: '/pages/index/index',
+  home: '/pages/index/home/index',
+  addWireEquip: '/pages/index/addWireEquip/addWireEquip',
+  addWirelessEquip: '/pages/index/addWirelessEquip/addWirelessEquip',
   login: '/pages/auth/login/login',
   register: '/pages/auth/register/register',
   reset: '/pages/auth/reset/reset',

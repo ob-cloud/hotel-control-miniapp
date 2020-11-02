@@ -1,28 +1,36 @@
-import $ from '../../utils/tool'
-import router from '../../utils/router'
+import $ from '../../../utils/tool'
+import router from '../../../utils/router'
 Page({
   data: {
     userInfo: {},
     menuList: [{
-      path: "home",
+      id: 1,
+      type: 1,
+      path: "addWirelessEquip",
       icon: "ic_menu_me_pressed.png",
       name: "无线网关"
     }, {
-      path: "home",
+      id: 2,
+      type: 2,
+      path: "addWireEquip",
       icon: "ic_menu_me_pressed.png",
       name: "有线网关"
     }, {
-      path: "home",
+      id: 3,
+      type: 1,
+      path: "addWirelessEquip",
       icon: "ic_menu_me_pressed.png",
       name: "无线红外"
     }, {
-      path: "home",
+      id: 4,
+      type: 2,
+      path: "addWireEquip",
       icon: "ic_menu_me_pressed.png",
       name: "有线红外"
     }]
   },
   goPages: function (e) {
-    router.push($.storage.get('token') ? e.currentTarget.dataset.name : 'login')
+    router.push($.storage.get('token') ? e.currentTarget.dataset.name : 'login', {type: e.currentTarget.dataset.type})
   },
   onShow: function () {
     if ($.storage.get('token')) {

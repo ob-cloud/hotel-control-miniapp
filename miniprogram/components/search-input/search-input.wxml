@@ -1,0 +1,25 @@
+<!--component/search-input.wxml-->
+<view class="cp-search-input">
+  <view wx:if="{{lefticon}}" class="left-icon" bindtap="lefticontap">
+    <icon class="iconfont {{ lefticon }}"></icon>
+  </view>
+  <slot name="search-left"></slot>
+  <view class="search-input-box" >
+    <input class="search-input" placeholder-class="search-input-holder"
+      type="text"
+      password="{{inPassword}}"
+      value="{{value}}"  
+      placeholder="{{holder}}" 
+      bindinput="changeData" 
+      disabled="{{disabled}}"
+      bindtap="inputTap"
+      bindfocus="inputfocus"
+      bindblur="inputblue"></input>
+      <icon bindtap="clearValue" class="iconfont iconcha input-icon" wx:if="{{valuetype === 'text' && value && canInput}}"></icon>
+      <icon bindtap="changeEyes"  class="iconfont {{inPassword ? 'iconyanjing1' : 'iconyanjing'}} input-icon" wx:if="{{valuetype === 'password'}}"></icon>
+  </view>
+  <view wx:if="{{righticon}}" class="right-icon" bindtap="righticontap">
+    <icon class="iconfont {{ righticon }}"></icon>
+  </view>
+  <slot name="search-right"></slot>
+</view>

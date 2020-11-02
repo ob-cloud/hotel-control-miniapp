@@ -34,7 +34,7 @@
   },
   "appid": "wx40298a154b8358f0",
   "projectname": "hotel-control-miniapp",
-  "libVersion": "2.8.1",
+  "libVersion": "2.13.2",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {

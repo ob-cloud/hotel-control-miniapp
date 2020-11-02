@@ -41,7 +41,7 @@ Page({
       });
       return false;
     }
-    $.loading('登录中...')
+    $.showLoading('')
     getUserInfo().then(res => {
       const nickName = res.userInfo.nickName
       const avatarUrl = res.userInfo.avatarUrl

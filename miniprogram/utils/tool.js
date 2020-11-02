@@ -1,3 +1,5 @@
+// import { $wuxLoading } from 'wux-weapp/index.js'
+const { $wuxLoading } = require('wux-weapp/index.js')
 function getLoader() {
   const page = getCurrentPages()
   return page[page.length - 1].selectComponent('#loading')
@@ -33,8 +35,12 @@ export default {
     const loader = getLoader()
     if (loader) loader.show(text, mask)
   },
-  hideLoading() {
-    const loader = getLoader()
+  hideLoading(id = '#wux-loading') {
+    const loader = $wuxLoading(id) || getLoader()
     if (loader) loader.hide()
+  },
+  showLoading (text = '数据加载中...', mask = true, id = '#wux-loading') {
+    const wuxLoader = $wuxLoading(id)
+    wuxLoader && wuxLoader.show({text, mask})
   }
 }

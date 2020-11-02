@@ -1,0 +1,35 @@
+/* component/search-input.wxss */
+.cp-search-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100rpx;
+  border-bottom: 1px solid #ccc;
+}
+.search-input {
+  padding: 0rpx 50rpx;
+  height: 100%;
+}
+.search-input-box {
+  flex: 1 1;
+  position: relative;
+}
+.search-input-holder {
+  font-size: 14px;
+}
+.left-icon, .right-icon {
+  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-icon {
+  color: rgb(160, 156, 156);
+  height: 36px;
+  position: absolute;
+  right: 10rpx;
+  top: calc(50% - 18px);
+  font-size: 16px;
+  padding: 0 10rpx;
+  z-index: 4;
+}

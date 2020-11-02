@@ -202,6 +202,90 @@ function showErrorToast(msg) {
   })
 }
 
+function startWifi() {
+  return new Promise((resolve, reject) => {
+    wx.startWifi({
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+function stopWifi() {
+  return new Promise((resolve, reject) => {
+    wx.stopWifi({
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+
+function getWifiList() {
+  return new Promise((resolve, reject) => {
+    wx.getWifiList({
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+function setWifiList(wifiList) {
+  return new Promise((resolve, reject) => {
+    wx.setWifiList({
+      wifiList,
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+function onGetWifiList() {
+  return new Promise(resolve => {
+    wx.onGetWifiList((res) => {
+      console.log(res)
+      resolve(res)
+    })
+  })
+}
+function offGetWifiList() {
+  return new Promise(resolve => {
+    wx.offGetWifiList(resolve)
+  })
+}
+function connectWifi(SSID, password, BSSID) {
+  return new Promise((resolve, reject) => {
+    wx.connectWifi({
+      SSID,
+      password,
+      BSSID,
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+function authorize(scope = 'scope.userLocation') {
+  return new Promise((resolve, reject) => {
+    wx.authorize({
+      scope,
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+function getLocation(type = 'wgs84') {
+  return new Promise((resolve, reject) => {
+    wx.getLocation({
+      type,
+      success: resolve,
+      fail: reject
+    })
+  })
+}
+function authorizeWifi() {
+  return new Promise((resolve, reject) => {
+    authorize().then(() => {
+      getLocation().then(resolve).catch(reject)
+    }).catch(reject)
+  })
+}
+
 module.exports = {
   dateFormat,
   request,
@@ -216,5 +300,15 @@ module.exports = {
   login,
   getUserInfo,
   updateManager,
-  getSystemInfo
+  getSystemInfo,
+  startWifi,
+  stopWifi,
+  getWifiList,
+  setWifiList,
+  offGetWifiList,
+  onGetWifiList,
+  connectWifi,
+  authorizeWifi,
+  authorize,
+  getLocation
 }

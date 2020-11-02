@@ -1,0 +1,39 @@
+.send-box {
+  padding: 0 50rpx;
+}
+.connet-tip {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  line-height: 200rpx;
+  display: flex;
+  justify-content: center;
+  color: rgb(68, 68, 68);
+}
+.operation-tip {
+  line-height: 100rpx;
+  font-size: 14px;
+  color: #ccc;
+}
+.send-box .connet-btn {
+  background-color: rgb(47, 185, 240);
+}
+.wifi-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.select-wifi-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.select-wifi-btn > .iconfont {
+  font-size: 16px;
+  height: 36px;
+}
+.send-box .connet-btn[disabled] {
+  background-color: rgba(47, 185, 240, 0.37);
+}

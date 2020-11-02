@@ -4,29 +4,29 @@
             <view class='title'>设备</view>
         </view>
     </view>
-    <van-tabs bind:change="onChange">
-        <van-tab title="网关">
+    <wux-tabs defaultCurrent="tab1" bind:change="onChange">
+        <wux-tab key="tab1" title="网关">
             <scroll-view class="gateway-list"  style="height:{{scrollHeight}}px;" scroll-y="true" scroll-top="{{scrollTop}}">
                 <view class="card-wrapper" wx:key="oboxSerialId" wx:for="{{gatewayList}}">
-                    <van-card
+                    <wux-card
                         custom-class="custom-class"
                         thumb-class="custom-thumb"
                         title-class="title-class"
                         thumb="{{ item.thumb }}" 
                         desc="{{ item.oboxSerialId }}" 
                         title="{{ item.oboxName }}">
-                    </van-card>
+                    </wux-card>
                 </view>
             </scroll-view>
-        </van-tab>
-        <van-tab title="红外">
+        </wux-tab>
+        <wux-tab key="tab2" title="红外">
             <scroll-view class="topic-list" scroll-y="true" scroll-top="{{scrollTop}}">
-                <van-card desc="{{item.oboxSerialId}}" title="{{item.oboxName}}" wx:key="oboxSerialId" wx:for="gatewayList">
+                <wux-card desc="{{item.oboxSerialId}}" title="{{item.oboxName}}" wx:key="oboxSerialId" wx:for="gatewayList">
                     <view slot="thumb">
                         <image src="../../static/images/gateway.png"></image>
                     </view>
-                </van-card>
+                </wux-card>
             </scroll-view>
-        </van-tab>
-    </van-tabs>
+        </wux-tab>
+    </wux-tabs>
 </view>

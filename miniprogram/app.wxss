@@ -39,3 +39,45 @@ page {
 .acea-row.row-column-around{flex-direction:column;justify-content:space-around;}
 .acea-row.row-center-wrapper{align-items:center;justify-content:center;}
 .acea-row.row-between-wrapper{align-items:center;justify-content:space-between;}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1940640 */
+  src: url('//at.alicdn.com/t/font_1940640_f5t57nw9fr.eot');
+  src: url('//at.alicdn.com/t/font_1940640_f5t57nw9fr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1940640_f5t57nw9fr.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1940640_f5t57nw9fr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1940640_f5t57nw9fr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1940640_f5t57nw9fr.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 27px;
+  font-style: normal;
+  vertical-align:middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icondown2:before {
+  content: "\e611";
+}
+
+.iconyanjing:before {
+  content: "\e6e0";
+}
+
+.iconcha:before {
+  content: "\e609";
+}
+
+.iconyanjing1:before {
+  content: "\e60c";
+}
+
+.iconsuo:before {
+  content: "\e662";
+}
+
+.iconwifi:before {
+  content: "\e6b9";
+}
