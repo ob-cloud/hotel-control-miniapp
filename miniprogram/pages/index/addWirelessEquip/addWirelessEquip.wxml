@@ -1,16 +1,16 @@
 <view class="send-box">
 	<text class="connet-tip">.</text>
 	<view>
-    <picker bindchange="bindPickerChange"  value="{{index}}" disabled="{{wifiList.length === 0}}" range-key="SSID" range="{{wifiList}}">
-      <search-input holder="请选择WIFI" value="{{wifiName}}" disabled="{{true}}" bind:inputTap="selectWifi">
+    <picker bindchange="onWifiChange"  value="{{index}}" disabled="{{wifiList.length === 0}}" range-key="SSID" range="{{wifiList}}">
+      <search-input holder="请选择WIFI" value="{{ssid}}" disabled="{{true}}">
         <view slot="search-right" class="select-wifi-btn">
           <icon class="iconfont icondown2"></icon>
         </view>
       </search-input>
     </picker>
   </view>
-	<search-input holder="WIFI密码" value="{{wifiPassword}}" bind:change="getWifiNumber" />
+	<search-input holder="WIFI密码" value="{{password}}" bind:change="onPasswordChange" />
   <!-- <button type="primary" class="connet-btn" bindtap="addWifi" disabled="{{!(wifiName && wifiPassword && canSend)}}">{{canSend ? '连接设备': '发送中...'}}</button> -->
-  <wux-button block type="positive">连接</wux-button>
+  <wux-button block type="positive" disabled="{{connecting}}" bindtap="connectWifi">连接</wux-button>
 </view>
-<wux-loading id="loading" />
+<wux-loading id="wux-loading" />

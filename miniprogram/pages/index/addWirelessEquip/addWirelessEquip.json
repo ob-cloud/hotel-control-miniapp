@@ -1,7 +1,9 @@
 {
   "usingComponents": {
     "search-input": "/components/search-input/search-input",
-    "wux-button": "wux-weapp/button/index"
+    "wux-button": "wux-weapp/button/index",
+    "wux-loading": "wux-weapp/loading/index"
   },
+  "enablePullDownRefresh": true,
   "navigationBarTitleText":"设备配网"
 }

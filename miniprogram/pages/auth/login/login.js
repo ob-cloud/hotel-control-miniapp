@@ -1,4 +1,4 @@
-var api = require('../../../config/api.js');
+const api = require('../../../config/api.js');
 import { postAction, getUserInfo } from '../../../utils/util';
 import $ from '../../../utils/tool';
 import router from '../../../utils/router';

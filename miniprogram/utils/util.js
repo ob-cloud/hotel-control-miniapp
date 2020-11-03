@@ -206,7 +206,10 @@ function startWifi() {
   return new Promise((resolve, reject) => {
     wx.startWifi({
       success: resolve,
-      fail: reject
+      fail: function(err) {
+        console.log(err)
+        reject(err)
+      }
     })
   })
 }
@@ -247,6 +250,14 @@ function onGetWifiList() {
 function offGetWifiList() {
   return new Promise(resolve => {
     wx.offGetWifiList(resolve)
+  })
+}
+function getConnectedWifi() {
+  return new Promise((resolve, reject) => {
+    wx.getConnectedWifi({
+      success: resolve,
+      fail: reject
+    })
   })
 }
 function connectWifi(SSID, password, BSSID) {
@@ -307,6 +318,7 @@ module.exports = {
   setWifiList,
   offGetWifiList,
   onGetWifiList,
+  getConnectedWifi,
   connectWifi,
   authorizeWifi,
   authorize,

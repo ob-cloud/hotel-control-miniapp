@@ -1,7 +1,7 @@
 <view class="container">
 	<form class="form-box">
 		<view class="form-item">
-			<input class="username" value="{{username}}" bindinput="bindUsernameInput" placeholder="账号" auto-focus />
+			<input class="username" value="{{username}}" bindinput="bindUsernameInput" placeholder="账号" />
 			<image wx:if="{{ username.length > 0 }}" id="clear-username" class="clear" src="/static/images/clear_input.png" catchtap="clearInput"></image>
 		</view>
 
