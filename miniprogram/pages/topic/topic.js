@@ -36,7 +36,9 @@ Page({
         size: 10,
         count: 0,
         scrollTop: 0,
-        showPage: false
+        showPage: false,
+
+        TabCur: 0,
     },
     onLoad: function (options) {
         // 页面初始化 options为页面跳转所带来的参数
@@ -53,6 +55,10 @@ Page({
     },
     onShow: function () {
         // 页面显示
+        const height = wx.getSystemInfoSync().windowHeight - 81 - 37
+        this.setData({
+            height: height
+        })
     },
     onHide: function () {
         // 页面隐藏
@@ -120,5 +126,11 @@ Page({
             "page": parseInt(that.data.page) - 1
         });
         this.getTopic();
+    },
+    tabSelect(e) {
+        this.setData({
+            TabCur: e.currentTarget.dataset.id
+        })
     }
+    
 })

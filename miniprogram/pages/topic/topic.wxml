@@ -4,29 +4,19 @@
             <view class='title'>设备</view>
         </view>
     </view>
-    <wux-tabs defaultCurrent="tab1" bind:change="onChange">
-        <wux-tab key="tab1" title="网关">
-            <scroll-view class="gateway-list"  style="height:{{scrollHeight}}px;" scroll-y="true" scroll-top="{{scrollTop}}">
-                <view class="card-wrapper" wx:key="oboxSerialId" wx:for="{{gatewayList}}">
-                    <wux-card
-                        custom-class="custom-class"
-                        thumb-class="custom-thumb"
-                        title-class="title-class"
-                        thumb="{{ item.thumb }}" 
-                        desc="{{ item.oboxSerialId }}" 
-                        title="{{ item.oboxName }}">
-                    </wux-card>
-                </view>
-            </scroll-view>
-        </wux-tab>
-        <wux-tab key="tab2" title="红外">
-            <scroll-view class="topic-list" scroll-y="true" scroll-top="{{scrollTop}}">
-                <wux-card desc="{{item.oboxSerialId}}" title="{{item.oboxName}}" wx:key="oboxSerialId" wx:for="gatewayList">
-                    <view slot="thumb">
-                        <image src="../../static/images/gateway.png"></image>
-                    </view>
-                </wux-card>
-            </scroll-view>
-        </wux-tab>
-    </wux-tabs>
+
+    <view class="tabs nav">
+        <view class="flex text-center">
+            <view class="cu-item flex-sub {{0==TabCur?'text-orange cur':''}}" bindtap="tabSelect" data-id="0">
+                网关
+            </view>
+            <view class="cu-item flex-sub {{1==TabCur?'text-orange cur':''}}" bindtap="tabSelect" data-id="1">
+                红外
+            </view>
+        </view>
+        <view class="cu-card case" style="height: {{height - 4}}px;">
+            <gateway wx:if="{{TabCur == 0}}"></gateway>
+            <infrared wx:if="{{TabCur == 1}}"></infrared>
+        </view>
+    </view>
 </view>

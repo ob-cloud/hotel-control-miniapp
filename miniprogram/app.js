@@ -2,7 +2,6 @@ import router from './utils/router'
 import { checkLogin, updateManager } from './utils/util'
 import websocket from './utils/websocket'
 const api = require('./config/api.js')
-//app.js
 App({
   onLaunch: function () {
     updateManager()

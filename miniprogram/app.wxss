@@ -1,4 +1,5 @@
-/* @import './static/styles/colorui.wxss'; */
+@import './static/styles/colorui.wxss';
+
 /**app.wxss**/
 .container {
   display: flex;

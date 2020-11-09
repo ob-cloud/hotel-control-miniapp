@@ -2,6 +2,9 @@
   "usingComponents": {
     "wux-tabs": "wux-weapp/tabs/index",
     "wux-tab": "wux-weapp/tab/index",
-    "wux-card": "wux-weapp/card/index"
-  }
+    "wux-card": "wux-weapp/card/index",
+    "gateway": "./components/gateway/gateway",
+    "infrared": "./components/infrared/infrared"
+  },
+  "enablePullDownRefresh": false
 }

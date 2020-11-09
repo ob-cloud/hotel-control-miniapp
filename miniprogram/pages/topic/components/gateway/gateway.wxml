@@ -1,0 +1,19 @@
+<scroll-view scroll-y="true" bindscrolltolower="lower" scroll-top="{{scrollTop}}" style="height: 100%;">
+  <view class="cu-list menu-avatar">
+    <view class="cu-item scroll-view-item" wx:for="{{list}}" wx:key="oboxSerialId">
+      <view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+      <view class="content">
+        <view class="text-grey">{{item.oboxName}}</view>
+        <view class="text-gray text-sm flex">
+          <view class="text-cut">
+            <text class=""></text>
+            {{item.oboxSerialId}}
+          </view>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">{{item.createTime}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

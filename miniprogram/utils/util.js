@@ -126,11 +126,12 @@ function checkSession() {
 function checkLogin() {
   return new Promise(function(resolve, reject) {
     if ($.storage.get('token')) {
-      checkSession().then(() => {
-        resolve(true);
-      }).catch(() => {
-        reject(false);
-      });
+      // checkSession().then(() => {
+      //   resolve(true);
+      // }).catch(() => {
+      //   reject(false);
+      // });
+      resolve(true);
     } else {
       reject(false);
     }
