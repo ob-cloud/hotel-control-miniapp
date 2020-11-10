@@ -118,10 +118,10 @@ export default class websocket {
       }
     })
   }
-  sendWebSocketMessage() {
+  sendWebSocketMessage(data) {
     return new Promise((resolve, reject) => {
       wx.sendSocketMessage({
-        data,
+        data: data,
         success: resolve,
         fail: reject
       })

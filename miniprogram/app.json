@@ -3,6 +3,7 @@
     "pages/index/home/index",
     "pages/index/addWireEquip/addWireEquip",
     "pages/index/addWirelessEquip/addWirelessEquip",
+    "pages/index/hotel/hotelList",
     "pages/auth/login/login",
     "pages/auth/register/register",
     "pages/auth/reset/reset",

@@ -1,0 +1,30 @@
+<view class="search">
+  <text class="icon text-gray cuIcon-search"></text>
+  <input placeholder="搜索酒店" bindinput="searchChange" bindconfirm="search"/>
+</view>
+<view class="hotels" wx:for="{{hotels}}" wx:key="id">
+  <view class="t">
+    <view class="name">
+      <text class="image text-gray cuIcon-shop"></text>
+      <text class="text" style="color:{{ index == 0?'#FEB21C':'#333333' }}">{{ item.name }}</text>
+    </view>
+  </view>
+  <view class="p">
+    <text class="image text-gray cuIcon-location"></text>
+    <text class="text">{{ item.address }}</text>
+  </view>
+  <view class="p">
+    <text class="image text-gray cuIcon-time"></text>
+    <text class="text">{{ item.openingHours }}</text>
+  </view>
+  <view class="p">
+    <text class="image text-gray cuIcon-phone"></text>
+    <text class="text">{{ item.contact }}</text>
+  </view>
+  <view wx:if="{{index > 0}}" class="distance-black" bindtap="goHotel" data-idx="{{ index }}">
+    <text class="text-gray cuIcon-right"></text>
+  </view>
+  <button wx:if="{{index == 0}}" class="goHotel" type="default" bindtap="goHotel" data-idx="{{ index }}">
+    进入酒店
+  </button>
+</view>

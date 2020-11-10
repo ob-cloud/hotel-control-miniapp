@@ -2,6 +2,7 @@ import $ from '../../../utils/tool'
 import router from '../../../utils/router'
 Page({
   data: {
+    hotelName: '',
     userInfo: {},
     menuList: [{
       id: 1,
@@ -37,6 +38,12 @@ Page({
       this.setData({
         userInfo: $.storage.get('userInfo')
       });
+    }
+    const hotelInfo = $.storage.get('hotelInfo')
+    if (hotelInfo) {
+      this.setData({
+        hotelName: hotelInfo.name
+      })
     }
   }
 })

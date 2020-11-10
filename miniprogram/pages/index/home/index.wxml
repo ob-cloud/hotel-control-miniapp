@@ -2,7 +2,16 @@
    <view class='header acea-row row-between-wrapper'>
       <view class='acea-row row-between-wrapper text'>
         <view class='title'>首页</view>
-        <view class="description">xxxx集团</view>
+        <view class="description">
+          <navigator url="/pages/index/hotel/hotelList">
+            <text style="color:#868d95; margin-right: 4rpx; font-size: 30rpx;" class="cuIcon-location"></text>
+            {{hotelName}}
+            <view class="text-right" style="padding-top: 4rpx; font-size: 20rpx;">
+              <text>切换酒店</text>
+              <text class="cuIcon-right"></text>
+            </view>
+          </navigator>
+        </view>
       </view>
    </view>
    <view class='content'>

@@ -1,6 +1,6 @@
 const ApiRootUrl = 'https://aliiot.on-bright.com/control/';
 const WifiRootUrl = 'http://aliiot.on-bright.com/control/wifi/'
-const SocketRootUrl = 'wss://aliiot.on-bright.com/control/socket'
+const SocketRootUrl = 'wss://aliiot.on-bright.com/control/websocket/'
 module.exports = {
   ApiRootUrl,
   WifiRootUrl,

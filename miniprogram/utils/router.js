@@ -2,6 +2,7 @@ const pages = {
   home: '/pages/index/home/index',
   addWireEquip: '/pages/index/addWireEquip/addWireEquip',
   addWirelessEquip: '/pages/index/addWirelessEquip/addWirelessEquip',
+  hotelList: '/pages/index/hotel/hotelList',
   login: '/pages/auth/login/login',
   register: '/pages/auth/register/register',
   reset: '/pages/auth/reset/reset',

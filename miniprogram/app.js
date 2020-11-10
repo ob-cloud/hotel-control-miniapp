@@ -1,12 +1,13 @@
 import router from './utils/router'
 import { checkLogin, updateManager } from './utils/util'
+import $ from './utils/tool'
 import websocket from './utils/websocket'
 const api = require('./config/api.js')
 App({
   onLaunch: function () {
     updateManager()
     this.websocket = new websocket({
-      url: api.SocketRootUrl,
+      url: `${api.SocketRootUrl}${$.storage.get('userInfo').id}`,
       heartCheck: true,
       isReconnect: false
     })
